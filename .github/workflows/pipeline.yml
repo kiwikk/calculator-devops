@@ -53,5 +53,5 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: wheel
-          path: dist/calculator-devops-1.0.0-py3-none-any.whl
+          path: dist/calc-0.0.1-py3-none-any.whl
         if: ${{ always() }}
