@@ -31,4 +31,10 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
       - name: Run tests
-        run: python -m pytest tests
+        run: python -m pytest tests --doctest-modules --junitxml=junit/test-results.xml
+      - name: Upload results
+        uses: actions/upload-artifact@v3
+        with:
+          name: pytest-results
+          path: junit/test-results.xml
+        if: ${{ always() }}
